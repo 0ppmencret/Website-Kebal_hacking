@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SecureLayer Web - 100 Layers of Protection</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: monospace;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    h1 {
+      margin: 2rem 0;
+      color: #00ffc3;
+    }
+    .layer {
+      margin: 5px auto;
+      width: 90%;
+      padding: 10px;
+      background: rgba(0,255,200,0.05);
+      border: 1px solid rgba(0,255,200,0.1);
+      border-radius: 8px;
+      animation: fadein 1s ease forwards;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔒 SecureLayer Web</h1>
+  <div id="layers"></div>
+
+  <script>
+    const container = document.getElementById('layers');
+    const securityLayers = [
+      "HTTPS Enforcement", "Content Security Policy", "X-Frame-Options",
+      "XSS Filtering", "SQL Injection Prevention", "Rate Limiting",
+      "Password Hashing (bcrypt)", "Session Expiry", "Two-Factor Auth",
+      "CSRF Tokens", "SameSite Cookies", "Secure Cookies", "HTTPOnly",
+      "Firewall Rules", "IP Whitelisting", "Cloudflare Proxy",
+      "Input Sanitization", "JWT Signature Check", "Token Expiry",
+      "Login Lockout", "Google reCAPTCHA", "Encryption at Rest",
+      "Encryption in Transit", "CORS Policy", "Audit Logs", "WAF Integration"
+    ];
+    while (securityLayers.length < 100) {
+      securityLayers.push("Generic Defense Layer #" + (securityLayers.length + 1));
+    }
+    securityLayers.forEach((layer, index) => {
+      const div = document.createElement("div");
+      div.className = "layer";
+      div.textContent = `Layer ${index + 1}: ${layer}`;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
